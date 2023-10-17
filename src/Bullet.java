@@ -1,8 +1,8 @@
 import processing.core.PApplet;
 
 public class Bullet {
-    private int x, y;
-    private int radius;
+    public int x, y;
+    public int radius;
     private int xSpeed, ySpeed;
 
     public Bullet(int x, int y, int r, int xs, int ys){

@@ -1,5 +1,7 @@
 import processing.core.PApplet;
 
+import static java.awt.geom.Point2D.distance;
+
 public class Enemy {
     private int radius;
     private int x, y;
@@ -19,5 +21,15 @@ public class Enemy {
 
     public void move(){
         x += xSpeed;
+    }
+
+    public boolean collidingBullet (Bullet other){
+        return this.radius + other.radius <= distance(this.x, this.y, other.x, other.y);
+    }
+
+    private double distance (float x1, float y1, float x2, float y2){
+        float dx = x1 - x2;
+        float dy = y1 - y2;
+        return dy/dx;
     }
 }
